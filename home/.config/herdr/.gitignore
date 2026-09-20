@@ -1,0 +1,5 @@
+# Herdr creates machine-specific runtime state in this directory.
+# Keep only the portable configuration under version control.
+*
+!.gitignore
+!config.toml

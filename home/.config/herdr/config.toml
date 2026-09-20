@@ -1,0 +1,15 @@
+onboarding = false
+[ui.toast]
+delivery = "herdr"
+
+[ui]
+show_agent_labels_on_pane_borders = false
+agent_panel_sort = "spaces"
+status_indicators = "symbols"
+
+[ui.sound]
+enabled = true
+
+[theme]
+name = "catppuccin"
+auto_switch = false

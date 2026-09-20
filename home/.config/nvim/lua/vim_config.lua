@@ -1,0 +1,11 @@
+local o = vim.opt
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+o.expandtab = true
+o.shiftwidth = 2
+o.number = true
+o.ignorecase = true
+o.smartcase = true
+o.clipboard = 'unnamedplus'
+o.scrolloff = 16
+o.undofile = true
