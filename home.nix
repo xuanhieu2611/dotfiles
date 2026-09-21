@@ -1,12 +1,12 @@
-{ config, pkgs, ... }:
+{ config, pkgs, user, ... }:
 
 let
   dotfiles = "${config.home.homeDirectory}/.dotfiles";
 in
 
 {
-  home.username = "hieule";
-  home.homeDirectory = "/Users/hieule";
+  home.username = user;
+  home.homeDirectory = "/Users/${user}";
   home.stateVersion = "24.11";
 
   home.packages = with pkgs; [

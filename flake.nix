@@ -13,19 +13,25 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }: {
-    darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
-      modules = [
-        ./configuration.nix
-        nix-homebrew.darwinModules.nix-homebrew
-        home-manager.darwinModules.home-manager
-        {
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit inputs; };
-          home-manager.users.hieule = import ./home.nix;
-        }
-      ];
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager }:
+    let
+      # The single username to update when setting up a new Mac.
+      user = "hieule";
+    in
+    {
+      darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
+        specialArgs = { inherit user; };
+        modules = [
+          ./configuration.nix
+          nix-homebrew.darwinModules.nix-homebrew
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs user; };
+            home-manager.users.${user} = import ./home.nix;
+          }
+        ];
+      };
     };
-  };
 }
