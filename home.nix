@@ -34,6 +34,7 @@ in
     shellAliases = {
       ".." = "cd ..";
       add = "git add .";
+      commit = "git commit";
       push = "git push";
       pull = "git pull";
       cc = "claude --dangerously-skip-permissions";
