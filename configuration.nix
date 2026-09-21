@@ -32,7 +32,7 @@
   };
   homebrew = {
     enable = true;
-    onActivation.cleanup = "none";  # remove anything not listed here
+    onActivation.cleanup = "none";  # preserve Homebrew packages not listed here
     onActivation.autoUpdate = true;
     onActivation.extraFlags = [ "--force" ];
     brews = [
