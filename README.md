@@ -1,92 +1,41 @@
-# macOS dotfiles
+# Hieu's dotfiles
 
-A small, opinionated baseline for a consistent coding environment across Apple Silicon Macs. It uses [Nix](https://nixos.org/), [nix-darwin](https://github.com/nix-darwin/nix-darwin), [Home Manager](https://github.com/nix-community/home-manager), and [nix-homebrew](https://github.com/zhaofengli/nix-homebrew).
+My personal macOS coding setup, managed with [nix-darwin](https://github.com/nix-darwin/nix-darwin), [Home Manager](https://github.com/nix-community/home-manager), and [nix-homebrew](https://github.com/zhaofengli/nix-homebrew).
 
-The goal is not to control everything on a machine. Shared coding tools and settings live here, while work-specific applications, databases, credentials, and sessions stay local.
+One repository gives my Macs the same editor, terminal, shell, command-line tools, applications, and system preferences. It is intentionally a baseline: work apps, databases, credentials, and other machine-specific tools stay local.
 
-## What it installs
+## What you get
 
-### Nix and Home Manager
+- **CLI:** Neovim, ripgrep, fd, fzf, jq, LazyGit
+- **Shell:** Zsh, autosuggestions, syntax highlighting, Starship
+- **Apps:** WezTerm, Karabiner-Elements, Raycast, Herdr
+- **Font:** Hack Nerd Font
+- **Config:** Neovim, WezTerm, Karabiner, Herdr, and shared agent instructions
+- **macOS:** dark mode, fast key repeat, Dock and Finder preferences, tap to click
 
-- Neovim
-- ripgrep
-- fd
-- fzf
-- jq
-- LazyGit
-- Starship
-- Zsh autosuggestions and syntax highlighting
-- Hack Nerd Font
+## Before you use it
 
-### Homebrew
+These are personal dotfiles, not a general-purpose installer. Fork the repository, read the configuration, and remove anything you do not want before running it.
 
-Formula:
+A few important details:
 
-- Herdr
+- The default target is an Apple Silicon Mac.
+- Existing Homebrew packages are preserved. This setup does not remove unlisted apps or formulae.
+- Declared Homebrew casks may be reinstalled because Homebrew Bundle runs with `--force`.
+- Existing managed files such as `~/.zshrc` and `~/.config/nvim` should be backed up first.
+- `home/AGENTS.md` contains my agent instructions. Review or replace it.
+- The `cc` alias runs Claude with `--dangerously-skip-permissions`. Know what that means before using it.
+- Credentials, SSH keys, Git identity, sessions, and application permissions are not included.
 
-Casks:
+## Fresh Mac setup
 
-- WezTerm
-- Karabiner-Elements
-- Raycast
-
-### Managed configuration
-
-- Neovim
-- WezTerm
-- Karabiner-Elements
-- Herdr
-- Zsh and Starship
-- Shared agent instructions
-- Selected macOS defaults
-
-Raycast preferences, credentials, SSH keys, login sessions, and application permissions are intentionally not stored in Git.
-
-## Design choices
-
-- Existing Homebrew packages are preserved with `homebrew.onActivation.cleanup = "none"`.
-- Shared command-line tools come from Nix.
-- macOS applications come from Homebrew casks.
-- Machine-specific tools can still be installed manually with Homebrew.
-- Editable application configs use out-of-store symlinks back to this repository.
-- Package and input versions are pinned by `flake.lock`.
-
-## Requirements
-
-- An Apple Silicon Mac
-- An administrator account
-- Internet access
-- Git, usually provided by Apple's Command Line Tools
-
-On a brand-new Mac, running `git` may prompt you to install the Command Line Tools. You can also start that installation with:
+Git may first ask you to install Apple's Command Line Tools. You can also start that manually:
 
 ```bash
 xcode-select --install
 ```
 
-## Before installing
-
-This setup takes ownership of these paths when present:
-
-```text
-~/.zshrc
-~/.config/nvim
-~/.config/wezterm
-~/.config/herdr
-~/.config/karabiner
-~/.claude/CLAUDE.md
-~/.pi/agent/AGENTS.md
-```
-
-Back up existing versions before the first activation. Home Manager will normally stop rather than silently overwrite conflicting files.
-
-If you already use Homebrew, `nix-homebrew` will migrate the existing installation. Unlisted formulae and casks are preserved, but the declared casks may be reinstalled because this configuration intentionally passes `--force` to Homebrew Bundle.
-
-Back up important database data independently before changing package-management infrastructure.
-
-## Installation
-
-Fork the repository first if you want to maintain your own version. Then clone it somewhere other than `~/.dotfiles`:
+Fork this repository, then clone your fork somewhere other than `~/.dotfiles`:
 
 ```bash
 mkdir -p ~/code
@@ -95,116 +44,75 @@ cd ~/code/dotfiles
 ./bootstrap.sh
 ```
 
-To try this repository directly without a fork:
+`bootstrap.sh` installs Determinate Nix, links the repository to `~/.dotfiles`, checks your macOS username, and performs the first nix-darwin activation.
 
-```bash
-mkdir -p ~/code
-git clone https://github.com/xuanhieu2611/dotfiles.git ~/code/dotfiles
-cd ~/code/dotfiles
-./bootstrap.sh
+The canonical username is set once in `flake.nix`:
+
+```nix
+user = "hieule";
 ```
 
-The bootstrap script:
-
-1. Verifies that the machine is an Apple Silicon Mac.
-2. Installs Determinate Nix when needed.
-3. Links the checkout to `~/.dotfiles`.
-4. Compares the configured username with the current macOS username.
-5. Offers to update the single username line in `flake.nix` when they differ.
-6. Performs the first nix-darwin activation.
-
-If bootstrap changes the username, commit that change to your own fork. This repository keeps `hieule` as its canonical username.
+If your username differs, bootstrap offers to update it. Commit that change to your fork.
 
 ## Daily use
 
-After pulling shared changes, rebuild the system:
+Pull changes and apply the setup:
 
 ```bash
 git pull
 ./rebuild.sh
 ```
 
-To change the setup:
+To change the setup, edit the repository and rebuild:
 
 ```bash
-# Edit configuration files
-git diff
 ./rebuild.sh
-git add path/to/changed-file
+git diff
+git add path/to/file
 git commit -m "Describe the change"
 git push
 ```
 
-Configuration files linked with `mkOutOfStoreSymlink` are edited directly in this repository. Many application-level changes are visible immediately, while Nix and system changes require `./rebuild.sh`.
+Application configs under `home/` are linked directly into `~/.config`, so editing them here edits the live config. Package, shell, and system changes require a rebuild.
 
-When `home/.config/nvim/lazy-lock.json` changes, restore the pinned plugin revisions inside Neovim:
+When `lazy-lock.json` changes, run this inside Neovim to use the pinned plugin revisions:
 
 ```vim
 :Lazy restore
 ```
 
-## Machine-specific software
+## What stays machine-specific
 
-Anything not declared here remains local to each machine. Examples include:
+Anything not declared here remains untouched and is not copied to another Mac. That can include Teams, `gh`, MySQL, PostgreSQL, Redis, CocoaPods, XcodeGen, Node.js, Xcode, and company tools.
 
-- Teams and other work applications
-- MySQL, PostgreSQL, and Redis
-- CocoaPods and XcodeGen
-- `gh`
-- Company-specific CLI tools
-- Node.js and NVM
-- Xcode and language SDKs
+Raycast settings use Raycast Sync or export/import. Credentials and macOS permissions must be set up separately on each machine.
 
-Because Homebrew cleanup is disabled, rebuilding this configuration does not remove those unlisted packages.
+## Make it yours
 
-## Useful commands
+The main places to customize are:
 
-Validate the flake without building:
+- `flake.nix` for the username and Nix inputs
+- `configuration.nix` for macOS settings and Homebrew packages
+- `home.nix` for CLI tools, shell settings, aliases, and managed links
+- `home/` for application configuration
 
-```bash
-nix flake check --no-build
-```
-
-Preview the system build:
-
-```bash
-nix build .#darwinConfigurations.mac.system --dry-run
-```
-
-Inspect the active system closure size:
-
-```bash
-nix path-info -Sh "$(readlink -f /run/current-system)"
-```
-
-Preview removable Nix store paths:
-
-```bash
-nix store gc --dry-run
-```
+Intel Macs need `nixpkgs.hostPlatform = "x86_64-darwin"` in `configuration.nix`.
 
 ## Repository layout
 
 ```text
 .
-├── bootstrap.sh        # First installation on a Mac
+├── bootstrap.sh        # First installation
 ├── rebuild.sh          # Apply later changes
-├── flake.nix           # Inputs, username, and system assembly
-├── configuration.nix   # nix-darwin, macOS, and Homebrew settings
-├── home.nix            # Home Manager packages and links
-└── home/               # Editable application configuration
+├── flake.nix           # Inputs and system assembly
+├── configuration.nix   # macOS and Homebrew
+├── home.nix            # Packages, shell, and links
+└── home/               # Application configuration
 ```
-
-## Notes
-
-- The configuration currently targets `aarch64-darwin`. Intel Macs require a separate host platform.
-- The `cc` and `cs` aliases expect separately installed tools and are harmless when those tools are absent.
-- Karabiner and Raycast still require macOS permissions to be granted manually.
-- Raycast settings should be transferred with Raycast Sync or its export/import feature.
 
 ## Inspiration
 
-This setup was inspired by [Kun Chen's dotfiles](https://github.com/kunchenguid/dotfiles), with a more conservative Homebrew cleanup policy for machines that also contain local work or personal tools.
+Inspired by [Kun Chen's dotfiles](https://github.com/kunchenguid/dotfiles) and [Mathias Bynens' dotfiles](https://github.com/mathiasbynens/dotfiles).
 
 ## License
 
