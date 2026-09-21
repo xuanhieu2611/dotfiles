@@ -17,7 +17,7 @@
       AppleInterfaceStyle = "Dark";
       KeyRepeat = 3;          # moderately fast key repeat
       InitialKeyRepeat = 20;  # moderate delay before repeat
-      _HIHideMenuBar = true;  # auto-hide the menu bar
+      _HIHideMenuBar = false; # always show the menu bar
       AppleShowAllExtensions = true;
     };
     dock.autohide = true;
