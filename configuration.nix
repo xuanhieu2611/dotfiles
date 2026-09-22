@@ -19,6 +19,7 @@
       InitialKeyRepeat = 20;  # moderate delay before repeat
       _HIHideMenuBar = false; # always show the menu bar
       AppleShowAllExtensions = true;
+      NSAutomaticPeriodSubstitutionEnabled = false; # don't turn double-space into a period
     };
     dock.autohide = true;
     finder.FXPreferredViewStyle = "Nlsv";  # list view by default

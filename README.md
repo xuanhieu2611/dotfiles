@@ -11,7 +11,7 @@ One repository gives my Macs the same editor, terminal, shell, command-line tool
 - **Apps:** WezTerm, Karabiner-Elements, Raycast, Herdr
 - **Font:** Hack Nerd Font
 - **Config:** Neovim, WezTerm, Karabiner, Herdr, and shared agent instructions
-- **macOS:** dark mode, fast key repeat, Dock and Finder preferences, tap to click
+- **macOS:** dark mode, fast key repeat, double-space period substitution disabled, Dock and Finder preferences, tap to click
 
 ## Before you use it
 
