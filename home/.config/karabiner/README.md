@@ -12,11 +12,12 @@ Developer keyboard bindings for macOS, applied to all keyboards.
   - `,/.`: previous/next word
   - Backspace: delete the previous word
   - Shift remains available for text selection
-- Tap `/`: slash as normal
-- Hold `/`: Hyper modifier (Control + Option + Shift + Command)
+- Tap `;`: semicolon as normal
+- Shift + tap `;`: colon as normal
+- Hold `;`: Hyper modifier (Control + Option + Shift + Command)
 - Right and Left Command remain normal Mac shortcut keys.
 
-Caps Lock and slash use a 200 ms tap timeout. Navigation mappings only override the corresponding Caps-based Control chords; the physical Left Control key retains its normal behavior. Slash-based Hyper shortcuts should favor left-hand keys for comfortable cross-hand chords.
+Caps Lock and semicolon use a 200 ms tap timeout. Navigation mappings only override the corresponding Caps-based Control chords; the physical Left Control key retains its normal behavior. Semicolon-based Hyper shortcuts should favor left-hand keys for comfortable cross-hand chords.
 
 ## Raycast setup
 
