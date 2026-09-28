@@ -5,6 +5,7 @@ local config = wezterm.config_builder()
 config.color_scheme = "rose-pine-moon"
 config.font = wezterm.font("Hack Nerd Font")
 config.font_size = 15.0
+config.line_height = 1.05
 config.initial_cols = 120
 config.initial_rows = 35
 config.window_background_opacity = 0.8
