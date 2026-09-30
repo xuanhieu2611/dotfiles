@@ -47,4 +47,13 @@ wezterm.on("window-focus-changed", function(window)
 	window:set_config_overrides(overrides)
 end)
 
+-- Match the case-insensitive search behavior used by most macOS apps.
+config.keys = {
+	{
+		key = "f",
+		mods = "CMD",
+		action = wezterm.action.Search({ CaseInSensitiveString = "" }),
+	},
+}
+
 return config
