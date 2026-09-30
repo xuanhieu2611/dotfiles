@@ -1,0 +1,30 @@
+[delta]
+    dark = true
+    line-numbers = true
+    keep-plus-minus-markers = false
+    hyperlinks = false
+    syntax-theme = base16
+
+    # Quiet context with full-row backgrounds and stronger changed-token emphasis.
+    zero-style = syntax
+    minus-style = syntax "#3d2434"
+    minus-emph-style = syntax bold "#663146"
+    plus-style = syntax "#213b36"
+    plus-emph-style = syntax bold "#2d554b"
+
+    # Keep line numbers useful without letting them compete with the code.
+    line-numbers-left-style = "#6e6a86"
+    line-numbers-right-style = "#6e6a86"
+    line-numbers-zero-style = "#6e6a86"
+    line-numbers-minus-style = "#eb6f92"
+    line-numbers-plus-style = "#9ccfd8"
+    line-numbers-left-format = "{nm:>3} "
+    line-numbers-right-format = "{np:>3} │ "
+
+    # Use each hunk as a compact filename and line-number section header.
+    file-style = omit
+    file-decoration-style = none
+    hunk-header-style = file line-number omit-code-fragment
+    hunk-header-decoration-style = "#393552" ul
+    hunk-header-file-style = bold "#9ccfd8"
+    hunk-header-line-number-style = "#6e6a86"

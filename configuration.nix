@@ -41,6 +41,7 @@
     onActivation.extraFlags = [ "--force" ];
     brews = [
       "herdr"
+      "lazygit"
     ];
     casks = [
       "wezterm"

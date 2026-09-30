@@ -15,13 +15,16 @@ in
     fd        # fast find
     fzf       # fuzzy finder
     jq        # json on the command line
-    lazygit
+    delta
     neovim
     # the font everything renders in
     nerd-fonts.hack
   ];
   fonts.fontconfig.enable = true;
-  home.sessionVariables.EDITOR = "nvim";
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    LG_CONFIG_FILE = "$HOME/.config/lazygit/config.yml";
+  };
   home.sessionPath = [ "$HOME/.local/bin" ];
 
   programs.zsh = {
@@ -60,6 +63,8 @@ in
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/wezterm";
   home.file.".config/nvim".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/nvim";
+  home.file.".config/lazygit".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/lazygit";
   home.file.".config/herdr".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/herdr";
   home.file.".config/karabiner".source =

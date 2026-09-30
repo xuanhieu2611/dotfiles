@@ -1,0 +1,61 @@
+gui:
+  # Keep navigation compact so the diff remains the visual focus.
+  sidePanelWidth: 0.25
+  sidePanels:
+    - [status]
+    - [files]
+    - [commits, branches, stash]
+  shrinkSidePanelsToContent: true
+  expandFocusedSidePanel: true
+  expandedSidePanelWeight: 3
+  portraitMode: auto
+  portraitModeAutoMaxWidth: 110
+  portraitModeAutoMinHeight: 30
+  # Preserve useful structure while removing decorative terminal chrome.
+  border: single
+  showListFooter: false
+  showRootItemInFileTree: false
+  showNumstatInFilesView: true
+  showRandomTip: false
+  showCommandLog: false
+  showBottomLine: false
+  showPanelJumps: false
+  showFileIcons: true
+  nerdFontsVersion: "3"
+  commitHashLength: 0
+  theme:
+    activeBorderColor:
+      - "#3e8fb0"
+      - bold
+    inactiveBorderColor:
+      - "#393552"
+    searchingActiveBorderColor:
+      - "#f6c177"
+      - bold
+    optionsTextColor:
+      - "#908caa"
+    selectedLineBgColor:
+      - "#393552"
+    inactiveViewSelectedLineBgColor:
+      - "#2a273f"
+    cherryPickedCommitFgColor:
+      - "#e0def4"
+    cherryPickedCommitBgColor:
+      - "#3e8fb0"
+    markedBaseCommitFgColor:
+      - "#e0def4"
+    markedBaseCommitBgColor:
+      - "#6e6a86"
+    unstagedChangesColor:
+      - "#eb6f92"
+    defaultFgColor:
+      - "#e0def4"
+git:
+  # Keep whitespace changes visible and use a small, review-friendly context.
+  ignoreWhitespaceInDiffView: false
+  diffContextSize: 3
+  log:
+    showGraph: never
+  diffRenderers:
+    - command: delta --config "$HOME/.config/lazygit/delta.gitconfig" --paging=never
+    - command: delta --config "$HOME/.config/lazygit/delta.gitconfig" --paging=never --side-by-side
