@@ -7,3 +7,6 @@ result-*
 
 # Karabiner creates machine-local configuration backups.
 home/.config/karabiner/automatic_backups/
+
+# Herdr installs and updates this integration in Pi's linked extensions folder.
+home/.pi/agent/extensions/herdr-agent-state.ts
