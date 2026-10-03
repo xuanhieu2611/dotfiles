@@ -6,6 +6,7 @@ delivery = "herdr"
 show_agent_labels_on_pane_borders = false
 agent_panel_sort = "spaces"
 status_indicators = "symbols"
+copy_on_select = false
 
 [ui.sound]
 enabled = true
