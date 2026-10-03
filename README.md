@@ -10,7 +10,7 @@ One repository gives my Macs the same editor, terminal, shell, command-line tool
 - **Shell:** Zsh, autosuggestions, syntax highlighting, Starship
 - **Apps:** WezTerm, Karabiner-Elements, Raycast, Herdr
 - **Font:** Hack Nerd Font
-- **Config:** Neovim, WezTerm, Karabiner, Herdr, and shared agent instructions
+- **Config:** Neovim, WezTerm, Karabiner, Herdr, Pi, and shared agent instructions
 - **macOS:** dark mode, fast key repeat, double-space period substitution disabled, Dock and Finder preferences, tap to click
 
 ## Before you use it
@@ -73,7 +73,9 @@ git commit -m "Describe the change"
 git push
 ```
 
-Application configs under `home/` are linked directly into `~/.config`, so editing them here edits the live config. Package, shell, and system changes require a rebuild.
+Application configs under `home/` are linked directly into `~/.config`, so editing them here edits the live config. Pi's settings, local extensions, and theme under `home/.pi/agent/` are linked the same way. Pi itself is not installed by this repo. Pi authentication, sessions, caches, and downloaded package code stay in Pi's local runtime directory and are not version-controlled.
+
+Pi package sources are pinned to exact versions in `home/.pi/agent/settings.json`. Review package source before trusting or using it. Package updates should be deliberate changes to those pins.
 
 When `lazy-lock.json` changes, run this inside Neovim to use the pinned plugin revisions:
 
@@ -94,7 +96,7 @@ The main places to customize are:
 - `flake.nix` for the username and Nix inputs
 - `configuration.nix` for macOS settings and Homebrew packages
 - `home.nix` for CLI tools, shell settings, aliases, and managed links
-- `home/` for application configuration
+- `home/` for application and Pi configuration
 
 Intel Macs need `nixpkgs.hostPlatform = "x86_64-darwin"` in `configuration.nix`.
 
