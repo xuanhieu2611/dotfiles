@@ -29,6 +29,11 @@ in
 
   programs.zsh = {
     enable = true;
+    envExtra = ''
+      if [ -f "$HOME/.cargo/env" ]; then
+        source "$HOME/.cargo/env"
+      fi
+    '';
     autosuggestion.enable = true;      # ghost text from history
     syntaxHighlighting.enable = true;  # commands turn green when valid
     initContent = ''
