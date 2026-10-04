@@ -79,7 +79,7 @@ config.mouse_bindings = {
 	},
 	{
 		event = { Up = { streak = 1, button = "Left" } },
-		mods = "ALT+SHIFT",
+		mods = "ALT|SHIFT",
 		action = wezterm.action.Nop,
 	},
 	{
