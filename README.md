@@ -23,7 +23,8 @@ A few important details:
 - Existing Homebrew packages are preserved. This setup does not remove unlisted apps or formulae.
 - Declared Homebrew casks may be reinstalled because Homebrew Bundle runs with `--force`.
 - Home Manager backs up conflicting existing targets with a `.backup` suffix before linking. Review those backups before removing them. If a backup already exists, activation stops rather than overwriting it; move that backup somewhere safe before retrying.
-- `home/AGENTS.md` contains my agent instructions. Review or replace it.
+- `home/AGENTS.md` is the global agent rule for Pi (`~/.pi/agent/AGENTS.md`), Claude Code (`~/.claude/CLAUDE.md`), and Codex (`~/.codex/AGENTS.md`).
+- `home/.cursor/rules/global.mdc` is Cursor's global rule. It is a separate file, symlinked to `~/.cursor/rules/global.mdc`. Edit the two files separately.
 - The `cc` alias runs Claude with `--dangerously-skip-permissions`. Know what that means before using it.
 - Credentials, SSH keys, Git identity, sessions, and application permissions are not included.
 
@@ -73,11 +74,15 @@ git commit -m "Describe the change"
 git push
 ```
 
-Application configs under `home/` are linked directly into `~/.config`, so editing them here edits the live config. Pi's settings and theme under `home/.pi/agent/` are linked there as well. Pi's entire extensions directory is also linked directly to `home/.pi/agent/extensions/`, so extension edits and newly added files are available after Pi's `/reload`, without rebuilding. Herdr's generated integration lives in this linked directory but is ignored by Git. Pi itself is not installed by this repo. Pi authentication, sessions, caches, and downloaded package code stay in Pi's local runtime directory and are not version-controlled.
+Application configs under `home/` are linked directly into `~/.config`, so editing them here edits the live config. `home/AGENTS.md` is linked the same way to Pi, Claude Code, and Codex. Cursor's rule is linked from `home/.cursor/rules/global.mdc`. On another machine, pull this repo and run `./rebuild.sh` to get the same links. Pi's settings and theme under `home/.pi/agent/` are linked there as well. Pi's entire extensions directory is also linked directly to `home/.pi/agent/extensions/`, so extension edits and newly added files are available after Pi's `/reload`, without rebuilding. Herdr's generated integration lives in this linked directory but is ignored by Git. Pi itself is not installed by this repo. Pi authentication, sessions, caches, and downloaded package code stay in Pi's local runtime directory and are not version-controlled.
 
 Pi package sources are pinned to exact versions in `home/.pi/agent/settings.json`. Review package source before trusting or using it. Package updates should be deliberate changes to those pins. Pi can write runtime fields such as `lastChangelogVersion` into the linked settings; exclude those generated changes from commits.
 
 When `lazy-lock.json` changes, run `:Lazy restore` inside Neovim to use the pinned plugin revisions.
+
+### Rust installed with rustup
+
+Home Manager loads `~/.cargo/env` in zsh when that file exists, so Cargo is available automatically after installing Rust with rustup. Apply `home.nix` changes with `./rebuild.sh`, then open a new terminal. Restarting the computer does not apply configuration changes. Until the rebuild is applied, run `source "$HOME/.cargo/env"` once per terminal session.
 
 ## Herdr and Pi integration
 

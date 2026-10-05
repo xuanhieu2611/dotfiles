@@ -8,7 +8,8 @@ This repository contains Hieu's personal macOS dotfiles, managed with nix-darwin
 - `configuration.nix`: macOS settings and Homebrew packages
 - `home.nix`: CLI packages, shell settings, and managed config links
 - `home/.config/`: Neovim, WezTerm, Karabiner, and Herdr configuration
-- `home/AGENTS.md`: global agent instructions, separate from this file
+- `home/AGENTS.md`: global agent rule for Pi, Claude Code, and Codex. This file is repo-specific and stays separate.
+- `home/.cursor/rules/global.mdc`: Cursor's global rule, separate from `home/AGENTS.md`.
 - `bootstrap.sh`: first-time setup
 - `rebuild.sh`: applies configuration changes
 

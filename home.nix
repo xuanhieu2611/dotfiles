@@ -75,8 +75,17 @@ in
   home.file.".config/karabiner".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/karabiner";
 
+  # One global agent rule for Pi, Claude Code, and Codex.
   home.file.".pi/agent/AGENTS.md".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
+  home.file.".claude/CLAUDE.md".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
+  home.file.".codex/AGENTS.md".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
+  # Cursor rule, kept separate from AGENTS.md.
+  home.file.".cursor/rules/global.mdc".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.cursor/rules/global.mdc";
+
   home.file.".pi/agent/settings.json".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi/agent/settings.json";
   # Edit-in-place; Herdr's generated integration is ignored by Git.
@@ -84,7 +93,4 @@ in
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi/agent/extensions";
   home.file.".pi/agent/themes".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi/agent/themes";
-
-  home.file.".claude/CLAUDE.md".source =
-    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/AGENTS.md";
 }
