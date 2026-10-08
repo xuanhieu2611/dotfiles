@@ -52,11 +52,26 @@ wezterm.on("window-focus-changed", function(window)
 end)
 
 -- Match the case-insensitive search behavior used by most macOS apps.
+-- Herdr owns selections inside its panes, so Command+C never reaches it and
+-- copy falls back to Ctrl+C. Forward Command+C when WezTerm has no selection
+-- of its own. A WezTerm selection still copies normally.
 config.keys = {
 	{
 		key = "f",
 		mods = "CMD",
 		action = wezterm.action.Search({ CaseInSensitiveString = "" }),
+	},
+	{
+		key = "c",
+		mods = "CMD",
+		action = wezterm.action_callback(function(window, pane)
+			local selection = window:get_selection_text_for_pane(pane)
+			if selection and selection ~= "" then
+				window:perform_action(wezterm.action.CopyTo("Clipboard"), pane)
+				return
+			end
+			window:perform_action(wezterm.action.SendKey({ key = "c", mods = "CMD" }), pane)
+		end),
 	},
 }
 
