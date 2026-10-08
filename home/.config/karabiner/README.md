@@ -6,18 +6,11 @@ Developer keyboard bindings for macOS, applied to all keyboards.
 
 - Tap Caps Lock: Escape
 - Hold Caps Lock: Left Control
-- Shift + Caps Lock: real Caps Lock
-- Hold Caps Lock for the navigation layer
-  - `h/j/k/l`: left/down/up/right arrows
-  - `,/.`: previous/next word
-  - Backspace: delete the previous word
-  - Shift remains available for text selection
-- Tap `;`: semicolon as normal
-- Shift + tap `;`: colon as normal
-- Hold `;`: Hyper modifier (Control + Option + Shift + Command)
-- Right and Left Command remain normal Mac shortcut keys.
+- Right Command: Hyper modifier (Control + Option + Shift + Command)
+- Left Command remains the normal Mac shortcut key.
+- Semicolon is a normal key.
 
-Caps Lock and semicolon use a 200 ms tap timeout. Navigation mappings only override the corresponding Caps-based Control chords; the physical Left Control key retains its normal behavior. Semicolon-based Hyper shortcuts should favor left-hand keys for comfortable cross-hand chords.
+Caps Lock uses a 200 ms tap timeout. Holding it sends Control, and `h`, `j`, `k`, `l`, comma, period, and Backspace stay ordinary keys. Hyper shortcuts should favor left-hand keys, since Hyper is under the right thumb.
 
 ## Raycast setup
 

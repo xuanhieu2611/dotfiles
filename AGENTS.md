@@ -7,7 +7,7 @@ This repository contains Hieu's personal macOS dotfiles, managed with nix-darwin
 - `flake.nix`: Nix inputs, username, and system assembly
 - `configuration.nix`: macOS settings and Homebrew packages
 - `home.nix`: CLI packages, shell settings, and managed config links
-- `home/.config/`: Neovim, WezTerm, Karabiner, and Herdr configuration
+- `home/.config/`: Neovim, WezTerm, Karabiner, Corne, and Herdr configuration
 - `home/AGENTS.md`: global agent rule for Pi, Claude Code, and Codex. This file is repo-specific and stays separate.
 - `home/.cursor/rules/global.mdc`: Cursor's global rule, separate from `home/AGENTS.md`.
 - `bootstrap.sh`: first-time setup
