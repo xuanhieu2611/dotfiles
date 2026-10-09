@@ -17,6 +17,8 @@ Hold the middle right thumb.
 - `h j k l`: arrows
 - `q w e r t`: `` ` - = [ ] ``, and `a` is `\`
 - Shift types the upper symbol
+- `z x`: display brightness down, display brightness up
+- `n m ,`: mute, volume down, volume up. Volume down and up sit under `j` and `k`
 - Number row: F1 through F10. Up and Down are F11 and F12
 
 Hold Option with an arrow for the previous or next word. Hold Option and press Backspace to delete the previous word.
