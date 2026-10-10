@@ -10,7 +10,7 @@ Developer keyboard bindings for macOS, applied to all keyboards.
 - Left Command remains the normal Mac shortcut key.
 - Semicolon is a normal key.
 
-Caps Lock uses a 200 ms tap timeout. Holding it sends Control, and `h`, `j`, `k`, `l`, comma, period, and Backspace stay ordinary keys. Hyper shortcuts should favor left-hand keys, since Hyper is under the right thumb.
+Caps Lock uses a 200 ms tap timeout. Holding it sends Control, and `h`, `j`, `k`, `l`, comma, period, and Backspace stay ordinary keys. Hyper is Right Command on this keyboard. The Corne does not have a Hyper key.
 
 ## Raycast setup
 
