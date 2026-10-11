@@ -12,7 +12,7 @@ Right, inner to outer: Space, hold for layer 1, unused.
 
 Enter is the right pinky key on the P row. Delete is the top-right key, where Backspace used to be. Backspace is the left inner thumb, and holding it still repeats.
 
-Left Command stays Command. Semicolon is a normal key. The key left of A is Escape on tap and Control on hold. Pressing another key while it is down selects Control immediately.
+Left Command stays Command. Semicolon and quote are normal keys, so fast typing is unchanged. The key left of A is Escape on tap and Control on hold. Pressing another key while it is down selects Control immediately.
 
 The extra keys right of `t` and `g` scroll up and scroll down.
 
@@ -29,9 +29,10 @@ Hold the middle right thumb.
 - `z x`: display brightness down, display brightness up
 - `n m ,`: mute, volume down, volume up. Volume down and up sit under `j` and `k`
 - Number row: F1 through F10. The extra keys right of `t` and `g` are F11 and F12
+- Semicolon: Hyper. Hold this thumb and semicolon, then press the letter. Hyper is Control + Option + Shift + Command, the same modifier Right Command sends on the laptop.
 
-Layers 2 through 5 are transparent.
+Layer 2 is on only while that semicolon key is held. Its keys are the normal letters, so Hyper+T sends T, not the symbol on this layer. Layers 3 through 5 are transparent.
 
 The inner-column scroll keys, mute, and RGB keys exist only on this Corne. Use the layer 1 arrows so the habit matches the Voyager.
 
-Hyper is not on this keyboard. The laptop Karabiner profile still puts Hyper on Right Command.
+This thumb and semicolon are on the Voyager as well. On the laptop, Right Command is Hyper.
