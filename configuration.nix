@@ -17,6 +17,7 @@
       AppleInterfaceStyle = "Dark";
       KeyRepeat = 3;          # moderately fast key repeat
       InitialKeyRepeat = 20;  # moderate delay before repeat
+      ApplePressAndHoldEnabled = false; # repeat held letters instead of the accent menu
       _HIHideMenuBar = false; # always show the menu bar
       AppleShowAllExtensions = true;
       NSAutomaticPeriodSubstitutionEnabled = false; # don't turn double-space into a period
