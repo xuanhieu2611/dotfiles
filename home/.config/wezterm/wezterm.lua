@@ -51,16 +51,19 @@ wezterm.on("window-focus-changed", function(window)
 	window:set_config_overrides(overrides)
 end)
 
--- Match the case-insensitive search behavior used by most macOS apps.
--- Herdr owns selections inside its panes, so Command+C never reaches it and
--- copy falls back to Ctrl+C. Forward Command+C when WezTerm has no selection
--- of its own. A WezTerm selection still copies normally.
+-- Legacy key encoding drops the Command modifier, so a forwarded Command+C
+-- would reach Herdr as a plain "c". The Kitty keyboard protocol keeps it.
+config.enable_kitty_keyboard = true
+
 config.keys = {
+	-- Match the case-insensitive search behavior used by most macOS apps.
 	{
 		key = "f",
 		mods = "CMD",
 		action = wezterm.action.Search({ CaseInSensitiveString = "" }),
 	},
+	-- Herdr owns selections inside its panes, so forward Command+C to it when
+	-- WezTerm has no selection of its own. A WezTerm selection still copies.
 	{
 		key = "c",
 		mods = "CMD",
