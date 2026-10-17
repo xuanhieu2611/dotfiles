@@ -84,6 +84,10 @@ When `lazy-lock.json` changes, run `:Lazy restore` inside Neovim to use the pinn
 
 Home Manager loads `~/.cargo/env` in zsh when that file exists, so Cargo is available automatically after installing Rust with rustup. Apply `home.nix` changes with `./rebuild.sh`, then open a new terminal. Restarting the computer does not apply configuration changes. Until the rebuild is applied, run `source "$HOME/.cargo/env"` once per terminal session.
 
+## WezTerm and Herdr keyboard handling
+
+Command+C copies WezTerm's selection when one exists; otherwise it sends an explicit CSI-u Command+C event to Herdr to copy Herdr's selection. It is not mapped to Ctrl+C, so copying without a selection does not intentionally send an interrupt. Kitty keyboard mode is disabled because the stable WezTerm build has an Escape encoding bug ([upstream fix](https://github.com/wezterm/wezterm/pull/7787)). After changing this setting, test in a fresh WezTerm window with a new Herdr attachment so keyboard modes are renegotiated. No system rebuild is needed for this linked config.
+
 ## Herdr and Pi integration
 
 After installing Pi and applying the dotfiles, install Herdr's bundled Pi integration:

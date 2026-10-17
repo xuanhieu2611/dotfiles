@@ -51,9 +51,9 @@ wezterm.on("window-focus-changed", function(window)
 	window:set_config_overrides(overrides)
 end)
 
--- Legacy key encoding drops the Command modifier, so a forwarded Command+C
--- would reach Herdr as a plain "c". The Kitty keyboard protocol keeps it.
-config.enable_kitty_keyboard = true
+-- The stable WezTerm build misencodes Escape in Kitty mode (wezterm#7787).
+-- Keep it disabled; encode Command+C explicitly below instead.
+config.enable_kitty_keyboard = false
 
 config.keys = {
 	-- Match the case-insensitive search behavior used by most macOS apps.
@@ -73,7 +73,9 @@ config.keys = {
 				window:perform_action(wezterm.action.CopyTo("Clipboard"), pane)
 				return
 			end
-			window:perform_action(wezterm.action.SendKey({ key = "c", mods = "CMD" }), pane)
+			-- CSI-u: codepoint 99 (c), modifier 9 (1 + Super/Command).
+			-- SendKey loses Command when Kitty mode is not negotiated.
+			window:perform_action(wezterm.action.SendString("\x1b[99;9u"), pane)
 		end),
 	},
 }
