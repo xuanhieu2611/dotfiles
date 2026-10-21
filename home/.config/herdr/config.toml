@@ -14,3 +14,7 @@ enabled = true
 [theme]
 name = "catppuccin"
 auto_switch = false
+
+[keys]
+previous_agent = "prefix+u"
+next_agent = "prefix+m"
