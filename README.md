@@ -6,7 +6,7 @@ One repository gives my Macs the same editor, terminal, shell, command-line tool
 
 ## What you get
 
-- **CLI:** Neovim, ripgrep, fd, fzf, jq, LazyGit
+- **CLI:** Neovim, ripgrep, fd, fzf, jq, LazyGit, Claude Code
 - **Shell:** Zsh, autosuggestions, syntax highlighting, Starship
 - **Apps:** WezTerm, Karabiner-Elements, Raycast, Herdr
 - **Font:** Hack Nerd Font
@@ -25,6 +25,7 @@ A few important details:
 - Home Manager backs up conflicting existing targets with a `.backup` suffix before linking. Review those backups before removing them. If a backup already exists, activation stops rather than overwriting it; move that backup somewhere safe before retrying.
 - `home/AGENTS.md` is the global agent rule for Pi (`~/.pi/agent/AGENTS.md`), Claude Code (`~/.claude/CLAUDE.md`), and Codex (`~/.codex/AGENTS.md`).
 - `home/.cursor/rules/global.mdc` is Cursor's global rule. It is a separate file, symlinked to `~/.cursor/rules/global.mdc`. Edit the two files separately.
+- Claude Code is the Homebrew cask `claude-code`, on Homebrew's stable channel. `./rebuild.sh` refreshes Homebrew and reinstalls declared casks, which is how this install updates. Sign in separately on each machine.
 - The `cc` alias runs Claude with `--dangerously-skip-permissions`. Know what that means before using it.
 - Credentials, SSH keys, Git identity, sessions, and application permissions are not included.
 

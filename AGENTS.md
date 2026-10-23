@@ -16,6 +16,7 @@ This repository contains Hieu's personal macOS dotfiles, managed with nix-darwin
 ## Important Notes
 
 - Make small, focused changes and preserve the existing style.
+- Use Homebrew for apps that should stay on a current stable release. Keep slower-moving CLI tools in Nix, where versions stay pinned until Nixpkgs is updated.
 - Do not add secrets, credentials, logs, generated files, or machine-specific state.
 - Do not hardcode the username outside the existing `user` value in `flake.nix`.
 - Do not change Nix state versions or `flake.lock` unless explicitly requested.

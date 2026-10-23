@@ -48,6 +48,7 @@
       "wezterm"
       "karabiner-elements"
       "raycast"
+      "claude-code"
     ];
   };
 }
