@@ -6,7 +6,7 @@ One repository gives my Macs the same editor, terminal, shell, command-line tool
 
 ## What you get
 
-- **CLI:** Neovim, ripgrep, fd, fzf, jq, LazyGit, Claude Code
+- **CLI:** Neovim, ripgrep, fd, fzf, jq, GitHub CLI, LazyGit, Claude Code
 - **Shell:** Zsh, autosuggestions, syntax highlighting, Starship
 - **Apps:** WezTerm, Karabiner-Elements, Raycast, Herdr
 - **Font:** Hack Nerd Font
@@ -122,7 +122,7 @@ node --experimental-transform-types --test tests/*.test.ts
 
 ## What stays machine-specific
 
-Anything not declared here remains untouched and is not copied to another Mac. That can include Teams, `gh`, MySQL, PostgreSQL, Redis, CocoaPods, XcodeGen, Node.js, Xcode, and company tools.
+Anything not declared here remains untouched and is not copied to another Mac. That can include Teams, MySQL, PostgreSQL, Redis, CocoaPods, XcodeGen, Node.js, Xcode, and company tools.
 
 Raycast settings use Raycast Sync or export/import. Credentials and macOS permissions must be set up separately on each machine.
 

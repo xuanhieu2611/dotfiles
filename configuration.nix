@@ -41,6 +41,7 @@
     onActivation.autoUpdate = true;
     onActivation.extraFlags = [ "--force" ];
     brews = [
+      "gh"
       "herdr"
       "lazygit"
     ];
