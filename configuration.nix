@@ -44,6 +44,7 @@
       "gh"
       "herdr"
       "lazygit"
+      "pi-coding-agent"
     ];
     casks = [
       "wezterm"

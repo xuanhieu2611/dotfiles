@@ -6,7 +6,7 @@ One repository gives my Macs the same editor, terminal, shell, command-line tool
 
 ## What you get
 
-- **CLI:** Neovim, ripgrep, fd, fzf, jq, GitHub CLI, LazyGit, Claude Code
+- **CLI:** Neovim, ripgrep, fd, fzf, jq, GitHub CLI, LazyGit, Claude Code, Pi
 - **Shell:** Zsh, autosuggestions, syntax highlighting, Starship
 - **Apps:** WezTerm, Karabiner-Elements, Raycast, Herdr
 - **Font:** Hack Nerd Font
@@ -26,6 +26,7 @@ A few important details:
 - `home/AGENTS.md` is the global agent rule for Pi (`~/.pi/agent/AGENTS.md`), Claude Code (`~/.claude/CLAUDE.md`), and Codex (`~/.codex/AGENTS.md`).
 - `home/.cursor/rules/global.mdc` is Cursor's global rule. It is a separate file, symlinked to `~/.cursor/rules/global.mdc`. Edit the two files separately.
 - Claude Code is the Homebrew cask `claude-code`, on Homebrew's stable channel. `./rebuild.sh` refreshes Homebrew and reinstalls declared casks, which is how this install updates. Sign in separately on each machine.
+- Pi is installed from the Homebrew formula `pi-coding-agent` during bootstrap or rebuild and updated through Homebrew. Sign in separately on each machine. If another Pi installation takes precedence, check `which -a pi`.
 - The `cc` alias runs Claude with `--dangerously-skip-permissions`. Know what that means before using it.
 - Credentials, SSH keys, Git identity, sessions, and application permissions are not included.
 
@@ -75,7 +76,7 @@ git commit -m "Describe the change"
 git push
 ```
 
-Application configs under `home/` are linked directly into `~/.config`, so editing them here edits the live config. `home/AGENTS.md` is linked the same way to Pi, Claude Code, and Codex. Cursor's rule is linked from `home/.cursor/rules/global.mdc`. On another machine, pull this repo and run `./rebuild.sh` to get the same links. Pi's settings and theme under `home/.pi/agent/` are linked there as well. Pi's entire extensions directory is also linked directly to `home/.pi/agent/extensions/`, so extension edits and newly added files are available after Pi's `/reload`, without rebuilding. Herdr's generated integration lives in this linked directory but is ignored by Git. Pi itself is not installed by this repo. Pi authentication, sessions, caches, and downloaded package code stay in Pi's local runtime directory and are not version-controlled.
+Application configs under `home/` are linked directly into `~/.config`, so editing them here edits the live config. `home/AGENTS.md` is linked the same way to Pi, Claude Code, and Codex. Cursor's rule is linked from `home/.cursor/rules/global.mdc`. On another machine, pull this repo and run `./rebuild.sh` to get the same links. Pi's settings and theme under `home/.pi/agent/` are linked there as well. Pi's entire extensions directory is also linked directly to `home/.pi/agent/extensions/`, so extension edits and newly added files are available after Pi's `/reload`, without rebuilding. Herdr's generated integration lives in this linked directory but is ignored by Git. Pi authentication, sessions, caches, and downloaded package code stay in Pi's local runtime directory and are not version-controlled.
 
 Pi defaults to `openai-codex/gpt-6.1-terra` with medium thinking effort. Context-window overrides in `home/.pi/agent/models.json` cap Terra and Sol at 272,000 tokens; this file is linked to `~/.pi/agent/models.json`. When first adopting this link, move any existing local `models.json` aside before rebuilding (merge any custom configuration into the repo copy first). New sessions use the default; resumed sessions keep their saved model and thinking level.
 
@@ -106,7 +107,7 @@ When migrating an existing extensions directory to the whole-directory link, Hom
 
 ## Pi quota footer
 
-Tested with `@earendil-works/pi-coding-agent` 1.0.0 and Node.js 24. Install Pi separately, apply the dotfiles configuration, and sign in to the `openai-codex` provider through Pi. Older Pi versions may not expose the authentication, theme, or lifecycle APIs this extension uses. Run `/reload` after editing the footer; no rebuild or Codex CLI installation is needed.
+Tested with `@earendil-works/pi-coding-agent` 1.0.0 and Node.js 24. Apply the dotfiles configuration and sign in to the `openai-codex` provider through Pi. Older Pi versions may not expose the authentication, theme, or lifecycle APIs this extension uses. Run `/reload` after editing the footer; no rebuild or Codex CLI installation is needed.
 
 The local `codex-usage.ts` Pi extension replaces the default footer with session cost, context-window usage, and Codex subscription quota windows. It uses Pi's OpenAI Codex auth resolver, then requests `https://chatgpt.com/backend-api/wham/usage` directly. This avoids requiring the Codex CLI or a third-party Pi extension, but the endpoint is an undocumented ChatGPT backend route and may change. The same route appears in [OpenAI's Codex source](https://github.com/openai/codex/blob/main/codex-rs/backend-client/src/client/rate_limit_resets.rs). Quota data requires Pi to be logged in to `openai-codex`; without that, the footer still shows cost and context usage.
 
