@@ -86,6 +86,8 @@ in
   home.file.".cursor/rules/global.mdc".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.cursor/rules/global.mdc";
 
+  home.file.".pi/agent/models.json".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi/agent/models.json";
   home.file.".pi/agent/settings.json".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.pi/agent/settings.json";
   # Edit-in-place; Herdr's generated integration is ignored by Git.
