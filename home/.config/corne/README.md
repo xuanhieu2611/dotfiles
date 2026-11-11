@@ -24,8 +24,9 @@ Hold the middle right thumb.
 - `y`: previous word. `o`: next word
 - Left inner thumb: delete the previous word
 - `b`: Option, for a shortcut that still needs the real modifier. Hold layer, hold `b`, then press the other key
-- `q w e r t`: `` ` - = [ ] ``, and `a` is `\`
-- Shift types the upper symbol
+- `q w e r t`: `` ` - = [ ] ``
+- `a s d f g`: `~ _ + { }`
+- `c` is `\`, and `v` is `|`
 - `z x`: display brightness down, display brightness up
 - `n m ,`: mute, volume down, volume up. Volume down and up sit under `j` and `k`
 - Number row: F1 through F10. The extra keys right of `t` and `g` are F11 and F12
