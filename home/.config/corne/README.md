@@ -27,6 +27,7 @@ Hold the middle right thumb.
 - `q w e r t`: `` ` - = [ ] ``
 - `a s d f g`: `~ _ + { }`
 - `c` is `\`, and `v` is `|`
+- Shift does not change these keys. `=` stays `=`, and `+` stays `+`. Same for the other pairs.
 - `z x`: display brightness down, display brightness up
 - `n m ,`: mute, volume down, volume up. Volume down and up sit under `j` and `k`
 - Number row: F1 through F10. The extra keys right of `t` and `g` are F11 and F12
