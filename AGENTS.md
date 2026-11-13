@@ -7,11 +7,15 @@ This repository contains Hieu's personal macOS dotfiles, managed with nix-darwin
 - `flake.nix`: Nix inputs, username, and system assembly
 - `configuration.nix`: macOS settings and Homebrew packages
 - `home.nix`: CLI packages, shell settings, and managed config links
-- `home/.config/`: Neovim, WezTerm, Karabiner, Corne, and Herdr configuration
+- `home/.config/`: Neovim, WezTerm, Karabiner, Corne, Voyager, and Herdr configuration
 - `home/AGENTS.md`: global agent rule for Pi, Claude Code, and Codex. This file is repo-specific and stays separate.
 - `home/.cursor/rules/global.mdc`: Cursor's global rule, separate from `home/AGENTS.md`.
 - `bootstrap.sh`: first-time setup
 - `rebuild.sh`: applies configuration changes
+
+## Keyboards
+
+Two split keyboards share one typing layout. The Corne is configured in Vial. Its layout file is `home/.config/corne/corne.vil`, and the notes are `home/.config/corne/README.md`. The Voyager is configured in Oryx. The notes are `home/.config/voyager/README.md`. Read those files before changing either layout. The Corne has an extra inner column and unused outer thumbs. The Voyager does not.
 
 ## Important Notes
 

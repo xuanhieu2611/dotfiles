@@ -37,4 +37,4 @@ Layer 2 is on only while that semicolon key is held. Its keys are the normal let
 
 The inner-column scroll keys, mute, and RGB keys exist only on this Corne. Use the layer 1 arrows so the habit matches the Voyager.
 
-This thumb and semicolon are on the Voyager as well. On the laptop, Right Command is Hyper.
+This thumb and semicolon are on the Voyager as well. The Voyager copy of the shared keys is `home/.config/voyager/README.md`. On the laptop, Right Command is Hyper.

@@ -10,7 +10,7 @@ Developer keyboard bindings for macOS, applied to all keyboards.
 - Left Command remains the normal Mac shortcut key.
 - Semicolon and Quote stay normal keys.
 
-Caps Lock uses a 200 ms tap timeout. Holding it sends Control, and pressing another key while it is down selects Control immediately. `h`, `j`, `k`, `l`, comma, period, and Backspace stay ordinary keys. On the Corne, Hyper is the navigation-layer semicolon key. Right Command is Hyper on this keyboard.
+Caps Lock uses a 200 ms tap timeout. Holding it sends Control, and pressing another key while it is down selects Control immediately. `h`, `j`, `k`, `l`, comma, period, and Backspace stay ordinary keys. On the Corne and the Voyager, Hyper is the symbol-layer semicolon key. Right Command is Hyper on the laptop keyboard.
 
 ## Raycast setup
 
