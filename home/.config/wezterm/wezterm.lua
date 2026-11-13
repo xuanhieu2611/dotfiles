@@ -8,7 +8,7 @@ config.colors = {
 	selection_fg = "#E0DEF4",
 }
 config.font = wezterm.font("Hack Nerd Font")
-config.font_size = 15.0
+config.font_size = 18.0
 config.line_height = 1.05
 config.initial_cols = 120
 config.initial_rows = 35
