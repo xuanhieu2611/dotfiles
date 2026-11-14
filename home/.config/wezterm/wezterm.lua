@@ -2,11 +2,7 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.color_scheme = "rose-pine-moon"
-config.colors = {
-	selection_bg = "#44415A",
-	selection_fg = "#E0DEF4",
-}
+config.color_scheme = "carbonfox"
 config.font = wezterm.font("Hack Nerd Font")
 config.font_size = 18.0
 config.line_height = 1.05
