@@ -44,6 +44,7 @@
       "gh"
       "herdr"
       "lazygit"
+      "node"
       "pi-coding-agent"
     ];
     casks = [
