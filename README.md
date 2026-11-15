@@ -94,6 +94,8 @@ Neovim formats files on save using Conform: Prettier for JavaScript, TypeScript,
 
 When `lazy-lock.json` changes, run `:Lazy restore` inside Neovim to use the pinned plugin revisions.
 
+For a practical TypeScript or Python session, see the [Neovim daily guide](docs/neovim-cheatsheet.html): find a file, read code, make edits with completion, handle diagnostics, and save with automatic formatting. Open it locally with `open docs/neovim-cheatsheet.html` from this repo. It works offline, with a language selector, small examples, light/dark themes, and a print/PDF layout.
+
 ### Rust installed with rustup
 
 Home Manager loads `~/.cargo/env` in zsh when that file exists, so Cargo is available automatically after installing Rust with rustup. Apply `home.nix` changes with `./rebuild.sh`, then open a new terminal. Restarting the computer does not apply configuration changes. Until the rebuild is applied, run `source "$HOME/.cargo/env"` once per terminal session.
