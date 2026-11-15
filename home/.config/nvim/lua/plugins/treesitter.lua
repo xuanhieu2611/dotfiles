@@ -13,6 +13,10 @@ return {
       highlight = { enable = true },
     },
     config = function(_, opts)
+      -- tree-sitter 0.26 removed --no-bindings, which the legacy plugin passes by default.
+      require('nvim-treesitter.install').ts_generate_args = {
+        'generate', '--abi', tostring(vim.treesitter.language_version),
+      }
       require('nvim-treesitter.configs').setup(opts)
     end,
   },

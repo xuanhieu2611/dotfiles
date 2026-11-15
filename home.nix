@@ -17,6 +17,7 @@ in
     jq        # json on the command line
     delta
     neovim
+    tree-sitter # needed to generate some Neovim parsers
     # the font everything renders in
     nerd-fonts.hack
   ];
