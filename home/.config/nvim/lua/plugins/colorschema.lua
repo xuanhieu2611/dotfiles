@@ -1,18 +1,26 @@
 return {
   {
-    'EdenEast/nightfox.nvim',
+    'navarasu/onedark.nvim',
     lazy = false,
     priority = 1000,
     config = function()
-      require('nightfox').setup({
-        options = {
-          transparent = vim.uv.os_uname().sysname == 'Darwin'
-            or string.find(vim.uv.os_uname().sysname, 'Windows') ~= nil
-            or string.find(vim.uv.os_uname().release, 'WSL') ~= nil,
-        },
+      require('onedark').setup({
+        style = 'warmer',
+        transparent = true,
+        code_style = { comments = 'none', keywords = 'none' },
       })
 
-      vim.cmd('colorscheme carbonfox')
+      -- Use the editor background inside the Snacks picker, not the darker float background.
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        pattern = 'onedark',
+        callback = function()
+          for _, group in ipairs({ 'SnacksPicker', 'SnacksPickerInput', 'SnacksPickerList', 'SnacksPickerPreview' }) do
+            vim.api.nvim_set_hl(0, group, { link = 'Normal' })
+          end
+        end,
+      })
+
+      vim.cmd('colorscheme onedark')
     end,
   },
 }

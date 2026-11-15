@@ -76,7 +76,7 @@ git commit -m "Describe the change"
 git push
 ```
 
-Neovim and WezTerm use Carbonfox; Pi's theme is configured separately. Restart Neovim to load theme changes, and WezTerm reloads its configuration automatically.
+Neovim uses One Dark warmer with a transparent background; WezTerm uses its built-in OneDark scheme with a neutral charcoal background; Pi's theme is configured separately. Restart Neovim to load theme changes, and WezTerm reloads its configuration automatically.
 
 Application configs under `home/` are linked directly into `~/.config`, so editing them here edits the live config. `home/AGENTS.md` is linked the same way to Pi, Claude Code, and Codex. Cursor's rule is linked from `home/.cursor/rules/global.mdc`. On another machine, pull this repo and run `./rebuild.sh` to get the same links. Pi's settings and theme under `home/.pi/agent/` are linked there as well. Pi's entire extensions directory is also linked directly to `home/.pi/agent/extensions/`, so extension edits and newly added files are available after Pi's `/reload`, without rebuilding. Herdr's generated integration lives in this linked directory but is ignored by Git. Pi authentication, sessions, caches, and downloaded package code stay in Pi's local runtime directory and are not version-controlled.
 
