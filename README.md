@@ -84,6 +84,8 @@ Pi defaults to `openai-codex/gpt-6.1-terra` with medium thinking effort. Context
 
 Pi package sources are pinned to exact versions in `home/.pi/agent/settings.json`. Review package source before trusting or using it. Package updates should be deliberate changes to those pins. Pi can write runtime fields such as `lastChangelogVersion` into the linked settings; exclude those generated changes from commits.
 
+Neovim uses Treesitter for syntax highlighting. Lazy.nvim installs the plugin on startup, and Treesitter installs parsers for JavaScript, TypeScript, Swift, Rust, Python, and common config languages, and automatically installs additional parsers when available. Parser installation requires Git, curl, and a C compiler. Run `:TSUpdate` to update parsers.
+
 When `lazy-lock.json` changes, run `:Lazy restore` inside Neovim to use the pinned plugin revisions.
 
 ### Rust installed with rustup
