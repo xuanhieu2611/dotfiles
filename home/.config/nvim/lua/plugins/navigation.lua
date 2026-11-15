@@ -18,6 +18,7 @@ return {
       { '<leader>s', function() Snacks.picker.grep() end,  desc = 'Search Text' },
       { '<leader>b', function() Snacks.picker.buffers() end, desc = 'Buffers' },
       { 'gd', function() Snacks.picker.lsp_definitions() end, desc = 'Goto Definition' },
+      { 'gr', function() Snacks.picker.lsp_references() end, desc = 'Find References' },
     },
   },
 }

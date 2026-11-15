@@ -86,6 +86,10 @@ Pi package sources are pinned to exact versions in `home/.pi/agent/settings.json
 
 Neovim uses Lualine for its status line and Treesitter for syntax highlighting. Lazy.nvim installs the plugin on startup, and Treesitter installs parsers for JavaScript, TypeScript, Swift, Rust, Python, and common config languages, and automatically installs additional parsers when available. Parser installation requires Git, curl, and a C compiler. The Swift parser also requires the tree-sitter CLI, provided by Home Manager; apply `home.nix` changes with `./rebuild.sh` before installing it. Run `:TSUpdate` to update parsers.
 
+Neovim uses blink.cmp for completion: Tab accepts a suggestion, Ctrl-Space opens the menu, Ctrl-n / Ctrl-p select suggestions, and Ctrl-e closes it. Mason manages language servers and other development tools. It automatically installs and enables the TypeScript/JavaScript and Python language servers; run `:Mason` to browse other tools. Rust uses rust-analyzer from rustup (`rustup component add rust-analyzer`), and Swift uses SourceKit-LSP from the Swift toolchain or Xcode. These toolchains must be available on PATH. LSP shortcuts include `gd` for definitions, `gr` for references, `K` for hover, Space-r-n to rename, Space-c-a for code actions, Space-d for diagnostics, and `[d` / `]d` to navigate diagnostics.
+
+Neovim formats files on save using Conform: Prettier for JavaScript, TypeScript, and JSON; Ruff for Python; rustfmt for Rust; and `swift format` for Swift. Mason installs Prettier and Ruff automatically; Conform prefers a project's local Prettier when available. Rust formatting requires rustfmt from rustup, and Swift formatting requires Swift 6 or later. Formatters respect their project configuration.
+
 When `lazy-lock.json` changes, run `:Lazy restore` inside Neovim to use the pinned plugin revisions.
 
 ### Rust installed with rustup
