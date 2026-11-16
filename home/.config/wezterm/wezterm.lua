@@ -2,9 +2,9 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.color_scheme = "OneDark (base16)"
+config.color_scheme = "Catppuccin Mocha"
 config.colors = {
-	background = "#1e1e1e",
+	background = "#11111b",
 }
 config.font = wezterm.font("Hack Nerd Font")
 config.font_size = 18.0
