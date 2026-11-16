@@ -1,3 +1,6 @@
+-- delete lines without changing registers or clipboard
+vim.keymap.set('n', 'dd', '"_dd', { desc = 'Delete Line Without Yanking' })
+
 -- select all
 vim.keymap.set('n', '<C-a>', 'ggVG', { desc = 'Select All' })
 -- pasting over a selection no longer clobbers your clipboard

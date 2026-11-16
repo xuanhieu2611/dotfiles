@@ -84,6 +84,8 @@ Pi defaults to `openai-codex/gpt-6.1-terra` with medium thinking effort. Context
 
 Pi package sources are pinned to exact versions in `home/.pi/agent/settings.json`. Review package source before trusting or using it. Package updates should be deliberate changes to those pins. Pi can write runtime fields such as `lastChangelogVersion` into the linked settings; exclude those generated changes from commits.
 
+Neovim always shows the sign column and uses relative line numbers alongside the current absolute line number. `dd` deletes lines without changing registers or the clipboard; other delete commands retain their normal behavior.
+
 Neovim uses Lualine for its status line and Treesitter for syntax highlighting. Treesitter installs parsers for JavaScript, TypeScript, Swift, Rust, Python, and common config languages. Parser installation requires curl, tar, a C compiler, and the tree-sitter CLI provided by Home Manager. Run `:TSInstall <language>` for additional parsers and `:TSUpdate` to update them. Restart Neovim after installing parsers if highlighting does not appear immediately.
 
 Node.js and npm are provided by Homebrew and are needed by Mason for JavaScript-based tools. Apply `configuration.nix` and `home.nix` changes with `./rebuild.sh`.
