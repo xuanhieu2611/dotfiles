@@ -5,6 +5,7 @@ o.expandtab = true
 o.shiftwidth = 2
 o.number = true
 o.relativenumber = true
+o.wrap = false
 o.signcolumn = 'yes'
 o.ignorecase = true
 o.smartcase = true
