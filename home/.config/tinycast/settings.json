@@ -109,7 +109,9 @@
     "showInLauncher": false,
     "commands": {
       "search-files": {
-        "shortcut": "ctrl+option+shift+cmd+s"
+        "shortcut": "ctrl+option+shift+cmd+s",
+        "alias": null,
+        "showInLauncher": true
       }
     }
   },
