@@ -44,9 +44,9 @@ Tinycast's settings file does not include Quicklink definitions or their shortcu
 
 ## Snippets
 
-`snippets/` contains reusable profile links: `;github`, `;linkedin`, and `;portfolio`. In **Settings → Snippets**, choose `~/.config/tinycast/snippets` as the Snippets Folder and enable snippets. Tinycast asks for consent to keyword matching and may request Accessibility permission. These steps are required on each Mac; the synced settings file cannot enable snippets.
+`snippets/` contains reusable profile links: `;github`, `;linkedin`, and `;portfolio`. The synced settings file points Tinycast to `~/.config/tinycast/snippets` using a portable path. Enable snippets in **Settings → Snippets** on each Mac. Tinycast asks for consent to keyword matching and may request Accessibility permission; the synced settings file cannot enable snippets.
 
-Choosing this folder does not move existing snippets. Copy any snippets you want to keep into it first, and review changes before committing because this folder is part of the repository. The keywords expand in other apps, or you can search for the snippet in the launcher and paste it.
+Changing folders does not move existing snippets. Copy any snippets you want to keep into this folder, and review changes before committing because it is part of the repository. Choosing the folder again in Tinycast may resolve the symlink and rewrite the portable path to a machine-specific one. The keywords expand in other apps, or you can search for the snippet in the launcher and paste it.
 
 ## Enable on each Mac
 
@@ -55,7 +55,7 @@ Choosing this folder does not move existing snippets. Copy any snippets you want
 3. Enable **Sync settings file** and choose **Import**, not **Replace**, when prompted.
 4. In **Settings → Quicklinks → Import quicklinks**, import `~/.config/tinycast/app-quicklinks.json`.
 5. Record Hyper + C, Hyper + T, and Hyper + G on the corresponding Quicklink rows.
-6. Set the snippets folder and enable snippets as described above.
+6. Enable snippets as described above.
 7. Grant Accessibility when requested for window management and pasting. Set up other permissions only as needed.
 
 macOS's Command + Space Spotlight shortcut is disabled in `configuration.nix`. Tinycast must be running for these shortcuts to work. File-sync consent, Quicklink shortcut assignments, and macOS permissions must be set up separately on each Mac; reinstalling Tinycast is unnecessary.

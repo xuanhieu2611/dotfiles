@@ -125,7 +125,7 @@
   },
   "snippets": {
     "showInLauncher": true,
-    "folder": null,
+    "folder": "~/.config/tinycast/snippets",
     "defaultAction": "paste",
     "commands": {}
   },
