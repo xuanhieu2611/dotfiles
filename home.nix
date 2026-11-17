@@ -75,6 +75,8 @@ in
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/herdr";
   home.file.".config/karabiner".source =
     config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/karabiner";
+  home.file.".config/tinycast".source =
+    config.lib.file.mkOutOfStoreSymlink "${dotfiles}/home/.config/tinycast";
 
   # One global agent rule for Pi, Claude Code, and Codex.
   home.file.".pi/agent/AGENTS.md".source =

@@ -8,9 +8,9 @@ One repository gives my Macs the same editor, terminal, shell, command-line tool
 
 - **CLI:** Neovim, ripgrep, fd, fzf, jq, GitHub CLI, LazyGit, Claude Code, Pi
 - **Shell:** Zsh, autosuggestions, syntax highlighting, Starship
-- **Apps:** WezTerm, Karabiner-Elements, Raycast, Herdr
+- **Apps:** WezTerm, Karabiner-Elements, Tinycast, Herdr
 - **Font:** Hack Nerd Font
-- **Config:** Neovim, WezTerm, Karabiner, Herdr, Pi, and shared agent instructions
+- **Config:** Neovim, WezTerm, Karabiner, Tinycast, Herdr, Pi, and shared agent instructions
 - **macOS:** dark mode, fast key repeat with the accent menu disabled, double-space period substitution disabled, Dock and Finder preferences, tap to click
 
 ## Before you use it
@@ -141,7 +141,7 @@ node --experimental-transform-types --test tests/*.test.ts
 
 Anything not declared here remains untouched and is not copied to another Mac. That can include Teams, MySQL, PostgreSQL, Redis, CocoaPods, XcodeGen, Node.js, Xcode, and company tools.
 
-Raycast settings use Raycast Sync or export/import. Credentials and macOS permissions must be set up separately on each machine.
+Tinycast shares launcher, window-management, file-search, clipboard-history, and emoji shortcuts through `home/.config/tinycast/settings.json`. Enable **Sync settings file** and choose **Import** on each Mac. App launch-or-focus uses the portable definitions in `home/.config/tinycast/app-quicklinks.json`, with a one-time import and shortcut assignment per Mac; see [the Tinycast setup notes](home/.config/tinycast/README.md). Clipboard history and other application data stay local. Credentials and macOS permissions must be set up separately on each machine.
 
 ## Make it yours
 

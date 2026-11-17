@@ -27,7 +27,7 @@
     finder.CreateDesktop = false;          # clean desktop
     trackpad.Clicking = true;              # tap to click
     CustomUserPreferences."com.apple.symbolichotkeys" = {
-      AppleSymbolicHotKeys."64".enabled = false; # free Command + Space for Raycast
+      AppleSymbolicHotKeys."64".enabled = false; # free Command + Space for Tinycast
     };
   };
   nix-homebrew = {
@@ -50,7 +50,7 @@
     casks = [
       "wezterm"
       "karabiner-elements"
-      "raycast"
+      "tinycast"
       "claude-code"
     ];
   };

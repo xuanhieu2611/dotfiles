@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "quicklinks": [
+    {
+      "name": "Focus Cursor",
+      "link": "/Applications/Cursor.app"
+    },
+    {
+      "name": "Focus WezTerm",
+      "link": "/Applications/WezTerm.app"
+    },
+    {
+      "name": "Focus Google Chrome",
+      "link": "/Applications/Google Chrome.app"
+    }
+  ]
+}
