@@ -42,6 +42,12 @@ These use the default opener, with **Open in a new window** off. Repeating a sho
 
 Tinycast's settings file does not include Quicklink definitions or their shortcut assignments. Import the definitions and assign these three shortcuts once on each Mac. Imports skip existing destinations; reuse matching existing rows, which may have different names.
 
+## Snippets
+
+`snippets/` contains reusable profile links: `;github`, `;linkedin`, and `;portfolio`. In **Settings → Snippets**, choose `~/.config/tinycast/snippets` as the Snippets Folder and enable snippets. Tinycast asks for consent to keyword matching and may request Accessibility permission. These steps are required on each Mac; the synced settings file cannot enable snippets.
+
+Choosing this folder does not move existing snippets. Copy any snippets you want to keep into it first, and review changes before committing because this folder is part of the repository. The keywords expand in other apps, or you can search for the snippet in the launcher and paste it.
+
 ## Enable on each Mac
 
 1. Apply the dotfiles configuration to create the config link.
@@ -49,7 +55,8 @@ Tinycast's settings file does not include Quicklink definitions or their shortcu
 3. Enable **Sync settings file** and choose **Import**, not **Replace**, when prompted.
 4. In **Settings → Quicklinks → Import quicklinks**, import `~/.config/tinycast/app-quicklinks.json`.
 5. Record Hyper + C, Hyper + T, and Hyper + G on the corresponding Quicklink rows.
-6. Grant Accessibility when requested for window management and pasting. Set up other permissions only as needed.
+6. Set the snippets folder and enable snippets as described above.
+7. Grant Accessibility when requested for window management and pasting. Set up other permissions only as needed.
 
 macOS's Command + Space Spotlight shortcut is disabled in `configuration.nix`. Tinycast must be running for these shortcuts to work. File-sync consent, Quicklink shortcut assignments, and macOS permissions must be set up separately on each Mac; reinstalling Tinycast is unnecessary.
 
